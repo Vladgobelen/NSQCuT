@@ -1,79 +1,54 @@
 # ============================================
-# 🔥 ЗАВИСИМОСТИ
+# 🔥 БЛОКИРУЕМ ВСЁ ПО УМОЛЧАНИЮ
 # ============================================
-node_modules/
-src-tauri/node_modules/
+*
 
 # ============================================
-# 🔥 СБОРКА И ГЕНЕРАЦИЯ
+# ✅ РАЗРЕШАЕМ ТОЛЬКО ФАЙЛЫ ПРОЕКТА
 # ============================================
-src-tauri/target/
-src-tauri/gen/
-dist/
-build/
-out/
+
+# --- Корень ---
+!.gitignore
+!README.md
+!package.json
+!package-lock.json
+
+# --- Фронтенд ---
+!src/
+!src/index.html
+!src/renderer.js
+!src/style.css
+!src/assets/
+
+# --- Tauri Rust ---
+!src-tauri/
+!src-tauri/Cargo.toml
+!src-tauri/build.rs
+!src-tauri/tauri.conf.json
+!src-tauri/src/
+!src-tauri/src/**/*.rs
+
+# --- Tauri Capabilities ---
+!src-tauri/capabilities/release.json
+
+# --- Tauri Icons & Resources ---
+!src-tauri/icons/
+!src-tauri/resources/
+
+# --- GitHub Actions ---
+!.github/
 
 # ============================================
-# 🔥 ВРЕМЕННЫЕ ФАЙЛЫ
+# ❌ ЯВНО БЛОКИРУЕМ (даже если есть в исключениях)
 # ============================================
-*.log
-*.tmp
-*.temp
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
-desktop.ini
-Console.txt
-output.txt
-enT.sh
 
-# ============================================
-# 🔥 ТЕСТОВЫЕ ПАПКИ (WoW клиент)
-# ============================================
-1/
-2/
-3/
-
-# ============================================
-# 🔥 АРТЕФАКТЫ СБОРКИ
-# ============================================
-*.exe
-*.dll
-*.so
-*.dylib
-*.app
-*.deb
-*.rpm
-*.AppImage
-*.msi
-*.zip
-*.tar.gz
-*.nsis
-*.sig
-
-# ============================================
-# 🔥 IDE
-# ============================================
-.vscode/
-.idea/
-*.iml
-*.rproj
-*.code-workspace
-
-# ============================================
-# 🔥 СЕКРЕТЫ
-# ============================================
-*.env
-.env.local
-.env.*.local
-secrets.json
-*.key
-*.pem
-
-# ============================================
-# 🔥 CARGO
-# ============================================
-.cargo/
-src-tauri/Cargo.lock
+# История оболочки и кэш
+.zshistory
+.zsh_history
+.bash_history
+.history
+.lesshst
+.mysql_history
+.pgsql_history
+.python_history
+.rust_history
