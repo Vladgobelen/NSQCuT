@@ -1,0 +1,462 @@
+cargo find reqwest
+cargo update
+cargo add reqwest --features json,rustls-tls
+cargo add reqwest --features json,rustls --force
+cargo add reqwest --features json,rustls
+cargo build --release
+scp -P 33333 ./NStgbR9 dersu@185.248.131.141:~/NStgbR/
+scp -P 33333 ./NStgbR9 dersu@185.248.131.141:~/
+ls |grep Vizi
+ls |grep Viz
+scp -P 33333 ./server/modules/*.js dersu@185.248.131.141:~/mediasoup-prod/modules/ && scp -P 33333 ./client/public/modules/*.js dersu@185.248.131.141:~/mediasoup-prod/public/modules/
+scp -P 33333 dersu@185.248.131.141:~/NStgb/src/main.rs ./NStgb/src/
+scp -P 33333 dersu@185.248.131.141:~/NStgb/src/main.rs ./
+ssh -p 33333 dersu@185.248.131.141 "mkdir -p ~/mediasoup-prod/public/sounds" && scp -P 33333 *.mp3 dersu@185.248.131.141:~/mediasoup-prod/public/sounds/
+git push --force-with-lease origin main
+git fetch origin
+bash download.sh
+sh 1.sh
+git push --force origin main
+sh download.sh
+rm /home/diver/AndroidStudioProjects/NSVCa/app/build.gradle.kts\
+
+cat > /home/diver/AndroidStudioProjects/NSVCa/app/build.gradle.kts << 'EOF'\
+plugins {\
+    id("com.android.application")\
+    id("org.jetbrains.kotlin.android")\
+}\
+\
+android {\
+    namespace = "com.example.voicechat"\
+    compileSdk = 34\
+\
+    defaultConfig {\
+        applicationId = "com.example.voicechat"\
+        minSdk = 24\
+        targetSdk = 34\
+        versionCode = 1\
+        versionName = "1.0"\
+    }\
+\
+    buildTypes {\
+        release {\
+            isMinifyEnabled = false\
+            proguardFiles(…ns {\
+        sourceCompatibility = JavaVersion.VERSION_1_8\
+        targetCompatibility = JavaVersion.VERSION_1_8\
+    }\
+\
+    kotlinOptions {\
+        jvmTarget = "1.8"\
+    }\
+}\
+\
+dependencies {\
+    implementation("androidx.core:core-ktx:1.12.0")\
+    implementation("androidx.appcompat:appcompat:1.6.1")\
+    implementation("com.google.android.material:material:1.11.0")\
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")\
+    implementation("androidx.activity:activity-ktx:1.8.2")\
+}\
+EOF
+./gradlew --stop\
+
+rm -rf /home/diver/AndroidStudioProjects/NSVCa/.gradle/
+rm -rf /home/diver/AndroidStudioProjects/NSVCa/app/build/
+rm -rf /home/diver/AndroidStudioProjects/NSVCa/build/
+cat /home/diver/AndroidStudioProjects/NSVCa/build.gradle.kts\
+
+cat /home/diver/AndroidStudioProjects/NSVCa/app/build.gradle.kts\
+
+cat /home/diver/AndroidStudioProjects/NSVCa/gradle/wrapper/gradle-wrapper.properties
+nano /home/diver/AndroidStudioProjects/NSVCa/gradle/wrapper/gradle-wrapper.properties
+rm -rf ~/.gradle/wrapper/dists/gradle-8.2-bin*
+./gradlew clean --refresh-dependencies --stacktrace 2>&1 | tail -50
+./gradlew clean --refresh-dependencies --stacktrace 2>&1 | grep -A 10 -B 10 "FAILURE\|Exception\|Error:"
+java -version\
+
+rm -rf ~/.gradle/caches/
+rm -rf ~/.gradle/daemon/
+db version
+ls /opt/android-studio/sdk/platform-tools/adb 2>/dev/null\
+
+ls /opt/android-studio/sdk/platform-tools/adb 2>/dev/null
+ls -la /opt/ | grep -i android
+ls -la ~/ | grep -i android
+find /opt -name "adb" -type f 2>/dev/null
+find ~ -name "adb" -type f 2>/dev/null
+adb version
+adb kill-server
+adb start-server
+adb devices
+./gradlew --stop
+rm -rf ~/.gradle/caches/ ~/.gradle/daemon/
+rm -rf .gradle/ app/build/ build/
+./gradlew clean --refresh-dependencies
+cat /home/diver/AndroidStudioProjects/NSVCa/gradle.properties
+ls /usr/lib/jvm/openjdk-bin-17
+nano /home/diver/AndroidStudioProjects/NSVCa/gradle.properties
+./gradlew clean assembleDebug --refresh-dependencies
+cd /home/diver/AndroidStudioProjects/NSVCa\
+
+./gradlew assembleDebug
+cd /home/diver/AndroidStudioProjects/NSVCa
+adb logcat | grep -i "nsvca\|webkit\|audio\|webrtc\|mediastream"
+adb logcat -c
+adb logcat -d > /tmp/nsvca_audio.log\
+
+tail -100 /tmp/nsvca_audio.log
+./gradlew clean assembleDebug
+adb push app/build/outputs/apk/debug/app-debug.apk /sdcard/Download/
+cd /home/diver/AndroidStudioProjects/NSVCa/app/build/outputs/apk/debug/\
+cd /home/diver/AndroidStudioProjects/NSVCa/app/build/outputs/apk/debug/
+cd /home/diver/sources/apple/NSVCap/\
+
+mkdir -p NSVCap
+mkdir -p .github/workflows
+cat > NSVCap/Info.plist << 'EOF'\
+<?xml version="1.0" encoding="UTF-8"?>\
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\
+<plist version="1.0">\
+<dict>\
+    <key>CFBundleDevelopmentRegion</key>\
+    <string>$(DEVELOPMENT_LANGUAGE)</string>\
+    <key>CFBundleExecutable</key>\
+    <string>$(EXECUTABLE_NAME)</string>\
+    <key>CFBundleIdentifier</key>\
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>\
+    <key>CFBundleInfoDictionaryVersion</key>\
+    <string>6.0</string>\
+    <key>CFBundleName</key>\
+    <string>$(PRODUCT_NAME)</string>\
+    <key>CFBundlePackageType</key>\
+    <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>\
+    <key>CFBundleShortVersionString</key>\
+    <string>1.0</string>\
+    <key>CFBundleVersion</key>\
+    <string>1</string>\
+    <key>LSRequiresIPhoneOS</key>\
+    <true/>\
+    <key>NSMicrophoneUsageDescription</key>\
+    <string>Ѓ�еобу�одимо длу� голосового у�ата</string>\
+    <key>NSCameraUsageDescription</key>\
+    <string>Ѓ�еобу�одимо длу� отправки у�ото/видео</string>\
+    <key>NSPhotoLibraryUsageDescription</key>\
+    <string>Ѓ�еобу�одимо длу� ву�бора изображений</string>\
+    <key>NSPhotoLibraryAddUsageDescription</key>\
+    <string>Ѓ�еобу�одимо длу� соу�ранениу� изображений</string>\
+    <key>UIBackgroundModes</key>\
+    <array>\
+        <string>audio</string>\
+    </array>\
+    <key>UILaunchStoryboardName</key>\
+    <string>LaunchScreen</string>\
+    <key>UIRequiredDeviceCapabilities</key>\
+    <array>\
+        <string>armv7</string>\
+    </array>\
+    <key>UISupportedInterfaceOrientations</key>\
+    <array>\
+        <string>UIInterfaceOrientationPortrait</string>\
+    </array>\
+    <key>WKAppBoundDomains</key>\
+    <array>\
+        <string>ns.fiber-gate.ru</string>\
+    </array>\
+</dict>\
+</plist>\
+EOF
+cat > NSVCap/ViewController.swift << 'SWIFTEOF'\
+import UIKit\
+import WebKit\
+import AVFoundation\
+\
+class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {\
+    \
+    private var webView: WKWebView!\
+    private var filePathCallback: (([URL]?) -> Void)?\
+    private let webURL = "https://ns.fiber-gate.ru"\
+    \
+    override func viewDidLoad() {\
+        super.viewDidLoad()\
+        setupAudioSession()\
+        setupWebView()\
+        loadURL()\
+        UIApplication.shared.isIdleTimerDisabled = true\
+    }\
+    \
+    private func setupAudioSession() {\
+        let session = AVAudioSession.sharedInstance()\
+        do {\
+            try session.setCategory(.playAndRecord,\
+                                  mode: .videoChat,\
+                                  options: [.allowBluetooth, .allowBluetoothA2DP, .allowAirPlay, .defaultToSpeaker, .mixWithOthers])\
+            try session.setActive(true, options: .notifyOthersOnDeactivation)\
+            print("⃼�� Audio session configured")\
+        } catch {\
+            print("⃽�� Audio session error: \(error)")\
+        }\
+    }\
+    \
+    private func setupWebView() {\
+        let config = WKWebViewConfiguration()\
+        config.mediaTypesRequiringUserActionForPlayback = []\
+        config.allowsInlineMediaPlayback = true\
+        \
+        let preferences = WKPreferences()\
+        preferences.javaScriptEnabled = true\
+        config.preferences = preferences\
+        \
+        webView = WKWebView(frame: view.bounds, configuration: config)\
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]\
+        webView.navigationDelegate = self\
+        webView.uiDelegate = self\
+        \
+        view.addSubview(webView)\
+    }\
+    \
+    private func loadURL() {\
+        guard let url = URL(string: webURL) else { return }\
+        webView.load(URLRequest(url: url))\
+    }\
+    \
+    func webView(_ webView: WKWebView,\
+                 decideMediaCapturePermissionsFor origin: WKSecurityOrigin,\
+                 initiatedByFrame frame: WKFrameInfo,\
+                 type: WKMediaCaptureType,\
+                 decisionHandler: @escaping (WKPermissionDecision) -> Void) {\
+        decisionHandler(.grant)\
+    }\
+    \
+    func webView(_ webView: WKWebView,\
+                 runOpenPanelWith parameters: WKOpenPanelParameters,\
+                 initiatedByFrame frame: WKFrameInfo,\
+                 completionHandler: @escaping ([URL]?) -> Void) {\
+        self.filePathCallback = completionHandler\
+        showImagePicker()\
+    }\
+    \
+    private func showImagePicker() {\
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }\
+        let picker = UIImagePickerController()\
+        picker.delegate = self\
+        picker.sourceType = .photoLibrary\
+        picker.mediaTypes = ["public.image"]\
+        present(picker, animated: true)\
+    }\
+    \
+    func webView(_ webView: WKWebView,\
+                 decidePolicyFor navigationAction: WKNavigationAction,\
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {\
+        if let url = navigationAction.request.url,\
+           url.host == URL(string: webURL)?.host {\
+            decisionHandler(.allow)\
+            return\
+        }\
+        decisionHandler(.cancel)\
+    }\
+    \
+    deinit {\
+        try? AVAudioSession.sharedInstance().setActive(false)\
+    }\
+}\
+\
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {\
+    func imagePickerController(_ picker: UIImagePickerController,\
+                              didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {\
+        picker.dismiss(animated: true)\
+        if let url = info[.imageURL] as? URL ?? info[.mediaURL] as? URL {\
+            filePathCallback?([url])\
+        }\
+        filePathCallback = nil\
+    }\
+    \
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {\
+        picker.dismiss(animated: true)\
+        filePathCallback?(nil)\
+        filePathCallback = nil\
+    }\
+}\
+SWIFTEOF
+cat > NSVCap/AppDelegate.swift << 'EOF'\
+import UIKit\
+\
+@main\
+class AppDelegate: UIResponder, UIApplicationDelegate {\
+    var window: UIWindow?\
+    \
+    func application(_ application: UIApplication,\
+                    didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {\
+        window = UIWindow(frame: UIScreen.main.bounds)\
+        window?.rootViewController = ViewController()\
+        window?.makeKeyAndVisible()\
+        return true\
+    }\
+}\
+EOF
+mkdir -p NSVCap.xcodeproj
+cat > NSVCap.xcodeproj/project.pbxproj << 'EOF'\
+// !$*UTF8*$!\
+{\
+	archiveVersion = 1;\
+	classes = {\
+	};\
+	objectVersion = 56;\
+	objects = {\
+\
+/* Begin PBXBuildFile section */\
+		A1000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001; };\
+		A1000002 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002; };\
+/* End PBXBuildFile section */\
+\
+/* Begin PBXFileReference section */\
+		A2000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFil…	AD000001 /* Debug */,\
+				AD000002 /* Release */,\
+			);\
+			defaultConfigurationIsVisible = 0;\
+			defaultConfigurationName = Release;\
+		};\
+		AB000001 /* Build configuration list for PBXProject "NSVCap" */ = {\
+			isa = XCConfigurationList;\
+			buildConfigurations = (\
+				AC000001 /* Debug */,\
+				AC000002 /* Release */,\
+			);\
+			defaultConfigurationIsVisible = 0;\
+			defaultConfigurationName = Release;\
+		};\
+/* End XCConfigurationList section */\
+	};\
+	rootObject = AA000001 /* Project object */;\
+}\
+EOF
+cat > .github/workflows/ios.yml << 'EOF'\
+name: Build iOS\
+\
+on:\
+  push:\
+    branches: [main, master]\
+  pull_request:\
+    branches: [main, master]\
+\
+jobs:\
+  build:\
+    runs-on: macos-latest\
+    steps:\
+      - name: Checkout\
+        uses: actions/checkout@v4\
+\
+      - name: Select Xcode\
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app/Contents/Developer\
+\
+      - name: Build\
+        run: |\
+          xcodebuild -project NSVCap.xcodeproj \\
+            -scheme NSVCap \\
+            -configuration Release \\
+            -archivePath build/NSVCap.xcarchive \\
+            archive \\
+            CODE_SIGN_IDENTITY="" \\
+            CODE_SIGNING_REQUIRED=NO \\
+            CODE_SIGNING_ALLOWED=NO\
+\
+      - name: Upload Artifact\
+        uses: actions/upload-artifact@v4\
+        with:\
+          name: iOS-App\
+          path: build/*.xcarchive\
+EOF
+tree /home/diver/sources/apple/NSVCap/
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Vladgobelen/NSVCap.git
+git push -u origin main
+cat > NSVCap.xcodeproj/.gitattributes << 'EOF'\
+project.pbxproj merge=union\
+EOF
+nano .github/workflows/ios.yml
+file NSVCap
+sh updateConfigs.sh
+find . -type f -exec file {} \; | sed 's/^[^:]*: //' | sort | uniq
+ls -la /home/diver/sources/JS/NSQCuE/
+ls -la /home/diver/sources/JS/NSQCuT/
+cd /home/diver/sources/JS/NSQCuT
+npm create tauri-app@latest . -- --template vanilla --manager npm --yes
+cp /home/diver/sources/JS/NSQCuE/renderer/index.html /home/diver/sources/JS/NSQCuT/src/
+npm install axios
+cp /home/diver/sources/JS/NSQCuE/renderer/style.css /home/diver/sources/JS/NSQCuT/src/
+cp /home/diver/sources/JS/NSQCuE/renderer/renderer.js /home/diver/sources/JS/NSQCuT/src/
+cp -r /home/diver/sources/JS/NSQCuE/assets /home/diver/sources/JS/NSQCuT/ 2>/dev/null || echo "Ѓ�апка assets не найдена"
+find /home/diver/sources/JS/NSQCuT/ -type f | head -40
+cd /home/diver/sources/JS/NSQCuT\
+
+cat /home/diver/sources/JS/NSQCuT/src-tauri/tauri.conf.json | python3 -m json.tool > /dev/null && echo "JSON OK" || echo "JSON ERROR"\
+
+cd ..\
+
+cargo add tauri@2
+cargo add tauri-plugin-shell@2
+cargo add serde --features derive
+cargo add serde_json
+cargo add tokio --features full
+cargo add reqwest --features json,stream,gzip
+cargo add zip --features deflate
+cargo add dirs
+ls
+mkdir -p src/commands\
+
+touch src/commands/mod.rs\
+
+touch src/commands/settings.rs\
+
+touch src/commands/addon_manager.rs\
+
+touch src/commands/game_launcher.rs\
+
+tree src/commands/ 2>/dev/null || ls -la src/commands/
+grep "name = " /home/diver/sources/JS/NSQCuT/src-tauri/Cargo.toml | grep -A1 "\[lib\]"
+cd ..
+cd /home/diver/sources/JS/NSQCuT/src-tauri\
+
+cargo clean
+cargo build
+npm install @tauri-apps/api @tauri-apps/cli\
+
+npm install @tauri-apps/api\
+
+npm install -D @tauri-apps/cli
+ls -la node_modules/@tauri-apps/
+cargo add tauri-plugin-dialog
+cargo clean\
+
+cargo build\
+
+npm run tauri build
+cargo add indexmap
+cargo add indexmap --features serde
+https://github.com/Vladgobelen/NSVCm/raw/refs/heads/main/app-debug.apk
+tree -I 'node_modules|target|.git|dist' -L 4\
+
+tree -I 'node_modules|target|.git|dist' -L 4
+pactl list sources | grep -A 5 "Source #"\
+
+pactl list sink-inputs\
+
+pw-cli list-objects | grep -i audio\
+
+id
+rm -rf src-tauri/target src-tauri/gen\
+
+pkg-config --modversion webkit2gtk-4.1
+strings /usr/lib/libwebkit2gtk-4.1.so.0 | grep -i webrtc
+export WEBKIT_ENABLE_WEBRTC=1
+export PIPEWIRE_SESSION_MANAGER=1
+find . -type f
+rm -rf src-tauri/target\
+
+npm install
+cargo fmt
+npm run tauri dev
+exit

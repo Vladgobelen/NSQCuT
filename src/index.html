@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self' blob: https://ns.fiber-gate.ru;
+      connect-src 'self' ipc: https://ns.fiber-gate.ru wss://*.fiber-gate.ru wss://*.mediasoup.io https://*.mediasoup.io https://*.twilio.com stun:* turn:*;
+      media-src 'self' blob: data: https://ns.fiber-gate.ru mediastream:;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ns.fiber-gate.ru;
+      style-src 'self' 'unsafe-inline' https://ns.fiber-gate.ru;
+      img-src 'self' https://ns.fiber-gate.ru blob: ;
+      frame-src 'self' https://ns.fiber-gate.ru;
+      worker-src 'self' blob:;
+    " />
+    <title>NightWatch QC</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-bar">
+        <h1>NightWatch QC</h1>
+        <button id="voice-btn" class="voice-btn" title="Щебетало">🎤</button>
+      </div>
+
+      <div class="game-panel">
+        <span id="game-status">Проверка...</span>
+        <div class="game-buttons">
+          <button id="change-path-btn" class="change-path-btn">📂 Путь</button>
+          <button id="launch-btn" disabled>Запустить игру</button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="addons-header">
+        <h2>Аддоны</h2>
+        <button id="logs-btn" class="logs-btn">📁 Логи</button>
+      </div>
+      <div id="addons-list"></div>
+    </div>
+
+    <!-- 🔊 Щебетало -->
+    <div id="voice-chat-view" class="voice-chat-view hidden">
+      <div id="voice-chat-header" class="voice-chat-header">
+        <button id="back-to-addons-btn" class="back-btn">← Назад</button>
+        <span class="voice-chat-title">Щебетало</span>
+        <button id="toggle-mic-global" class="mic-toggle-btn" title="Микрофон">🎤</button>
+      </div>
+      <iframe
+        id="voice-chat-frame"
+        src=""
+        allow="microphone; camera; display-capture; autoplay; fullscreen"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-top-navigation-by-user-activation"
+      ></iframe>
+    </div>
+
+    <script type="module" src="./renderer.js"></script>
+  </body>
+</html>

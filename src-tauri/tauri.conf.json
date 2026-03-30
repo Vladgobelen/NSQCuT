@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "NightWatch QC",
+  "version": "0.1.0",
+  "identifier": "com.nightwatch.qc",
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "frontendDist": "../src",
+    "devUrl": null,
+    "removeUnusedCommands": true
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "NightWatch QC",
+        "width": 900,
+        "height": 700,
+        "minWidth": 400,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "center": true,
+        "visible": true,
+        "transparent": false,
+        "shadow": true
+      }
+    ],
+    "security": {
+      "csp": {
+        "default-src": ["'self'", "blob:", "https://ns.fiber-gate.ru"],
+        "connect-src": [
+          "'self'",
+          "ipc:",
+          "https://ns.fiber-gate.ru",
+          "wss://*.fiber-gate.ru",
+          "wss://*.mediasoup.io",
+          "https://*.mediasoup.io",
+          "https://*.twilio.com",
+          "stun:*",
+          "turn:*"
+        ],
+        "media-src": [
+          "'self'",
+          "blob:",
+          "data:",
+          "https://ns.fiber-gate.ru",
+          "mediastream:"
+        ],
+        "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://ns.fiber-gate.ru"],
+        "style-src": ["'self'", "'unsafe-inline'", "https://ns.fiber-gate.ru"],
+        "img-src": ["'self'", "https://ns.fiber-gate.ru", "blob:", ""],
+        "frame-src": ["'self'", "https://ns.fiber-gate.ru"],
+        "worker-src": ["'self'", "blob:"]
+      },
+      "freezePrototype": false,
+      "dangerousDisableAssetCspModification": false,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "deb", "rpm", "appimage"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "copyright": "© 2024 NightWatch QC",
+    "category": "Utility",
+    "shortDescription": "Менеджер аддонов для WoW 3.3.5 с голосовым чатом",
+    "longDescription": "NightWatch QC — инструмент для управления аддонами World of Warcraft 3.3.5 с интегрированным голосовым чатом на базе mediasoup.",
+    "linux": {
+      "deb": {
+        "depends": [
+          "libwebkit2gtk-4.1-0",
+          "libgtk-3-0",
+          "libappindicator3-1",
+          "libpulse0",
+          "gstreamer1.0-plugins-good",
+          "gstreamer1.0-pulseaudio",
+          "pipewire"
+        ],
+        "files": {}
+      },
+      "rpm": {
+        "depends": [
+          "webkit2gtk4.1",
+          "gtk3",
+          "libappindicator",
+          "pulseaudio-libs",
+          "gstreamer1-plugins-good",
+          "gstreamer1-plugins-pulseaudio"
+        ],
+        "files": {}
+      },
+      "appimage": {
+        "bundleMediaFramework": true
+      }
+    },
+    "createUpdaterArtifacts": false
+  },
+  "plugins": {
+    "shell": {
+      "open": true
+    }
+  }
+}
