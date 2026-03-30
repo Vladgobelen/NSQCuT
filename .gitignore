@@ -1,0 +1,86 @@
+# ============================================
+# 🔥 БЛОКИРУЕМ ВСЁ ПО УМОЛЧАНИЮ
+# ============================================
+*
+
+# ============================================
+# ✅ РАЗРЕШАЕМ ФАЙЛЫ ПРОЕКТА
+# ============================================
+
+# --- Корень ---
+!.gitignore
+!README.md
+!package.json
+!package-lock.json
+
+# --- Фронтенд ---
+!src/index.html
+!src/renderer.js
+!src/style.css
+!src/assets/
+
+# --- Tauri Rust ---
+!src-tauri/Cargo.toml
+!src-tauri/build.rs
+!src-tauri/tauri.conf.json
+!src-tauri/src/
+
+# --- Tauri Capabilities ---
+!src-tauri/capabilities/release.json
+
+# --- Tauri Icons ---
+!src-tauri/icons/
+
+# --- Tauri Resources ---
+!src-tauri/resources/
+
+# --- GitHub Actions ---
+!.github/
+
+# ============================================
+# ❌ ЯВНО БЛОКИРУЕМ (даже если есть в исключениях)
+# ============================================
+
+# Тестовые папки с WoW
+1/
+2/
+3/
+
+# Временные файлы
+Console.txt
+output.txt
+enT.sh
+*.log
+*.tmp
+*.temp
+
+# Зависимости
+node_modules/
+src-tauri/node_modules/
+
+# Сборка
+src-tauri/target/
+src-tauri/gen/
+dist/
+build/
+
+# Артефакты
+*.exe
+*.dll
+*.so
+*.dylib
+*.app
+*.deb
+*.rpm
+*.AppImage
+*.msi
+*.zip
+*.tar.gz
+
+# Cargo lock (генерируется локально)
+src-tauri/Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.iml
