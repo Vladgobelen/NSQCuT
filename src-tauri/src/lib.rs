@@ -42,13 +42,12 @@ pub fn run() {
             addon_state.sync_game_path(game_path)?;
 
             // 🔥 3. ЗАПУСК ПРОВЕРКИ ОБНОВЛЕНИЙ ПРИ СТАРТЕ
-            // ✅ Используем app_handle.state() вместо app.state() для 'static lifetime
             let app_handle = app.app_handle().clone();
-            
+
             tauri::async_runtime::spawn(async move {
-                // ✅ Получаем state через app_handle, а не через замыкание
                 let state = app_handle.state::<commands::addon_manager::AddonManagerState>();
-                let _ = commands::addon_manager::startup_update_check(&app_handle, &state).await;
+                let _ =
+                    commands::addon_manager::startup_update_check(&app_handle, &state).await;
                 // После старта — запускаем регулярный чекер
                 commands::addon_manager::start_update_checker(app_handle);
             });

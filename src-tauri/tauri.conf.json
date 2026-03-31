@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Night Watch Updater",
+  "productName": "NSQCuT",
   "version": "1.0.0",
   "identifier": "com.nightwatch.updater",
   "build": {
@@ -11,7 +11,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "Night Watch Updater",
+        "title": "Ночная стража - апдейтер",
         "width": 550,
         "height": 650,
         "resizable": true,

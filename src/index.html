@@ -1,56 +1,62 @@
 <!-- src/index.html -->
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night Watch Updater</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NSQCuT - Ночная стража</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Основной интерфейс менеджера аддонов -->
     <div class="container">
-        <div class="top-bar">
-            <h1>Менеджер аддонов</h1>
-            <button id="voice-btn" class="voice-btn" title="Щебетало">🎤</button>
+      <div class="top-bar">
+        <h1>NSQCuT - Менеджер аддонов</h1>
+        <button id="voice-btn" class="voice-btn" title="Щебетало">🎤</button>
+      </div>
+
+      <div class="game-panel">
+        <span id="game-status">Проверка игры...</span>
+        <div style="display: flex; gap: 5px">
+          <button id="change-path-btn" class="logs-btn" style="padding: 8px 10px">
+            Изменить путь
+          </button>
+          <button id="launch-btn" disabled>Запустить игру</button>
         </div>
-        <div class="game-panel">
-            <span id="game-status">Проверка игры...</span>
-            <div style="display: flex; gap: 5px;">
-                <button id="change-path-btn" class="logs-btn" style="padding: 8px 10px;">Изменить путь</button>
-                <button id="launch-btn" disabled>Запустить игру</button>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="addons-header">
-            <h2>Доступные аддоны</h2>
-            <button id="logs-btn" class="logs-btn">Логи</button>
-        </div>
-        <div class="addons-list" id="addons-list"></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="addons-header">
+        <h2>Доступные аддоны</h2>
+        <button id="logs-btn" class="logs-btn">Логи</button>
+      </div>
+
+      <div class="addons-list" id="addons-list"></div>
     </div>
 
     <!-- Интерфейс Щебетало (скрыт по умолчанию) -->
     <div id="voice-chat-view" class="voice-chat-view hidden">
-        <!-- 🔥 Зона детекции ховера (верхние 10px) -->
-        <div id="voice-hover-zone"></div>
-        
-        <!-- 🔥 Всплывающая панель (всегда видно 10px) -->
-        <div class="voice-chat-header" id="voice-chat-header">
-            <button id="back-to-addons-btn" class="back-btn">← Назад</button>
-            <span class="voice-chat-title">Щебетало</span>
-        </div>
-        
-        <!-- iframe с веб-клиентом -->
-        <iframe
-            id="voice-chat-frame"
-            src="https://ns.fiber-gate.ru"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-top-navigation allow-pointer-lock"
-            allow="camera; microphone; autoplay; display-capture; clipboard-read; clipboard-write; fullscreen; picture-in-picture"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <!-- 🔥 Зона детекции ховера (верхние 10px) -->
+      <div id="voice-hover-zone"></div>
+
+      <!-- 🔥 Всплывающая панель (всегда видно 10px) -->
+      <div class="voice-chat-header" id="voice-chat-header">
+        <button id="back-to-addons-btn" class="back-btn">← Назад</button>
+        <span class="voice-chat-title">Щебетало</span>
+      </div>
+
+      <!-- iframe с веб-клиентом -->
+      <iframe
+        id="voice-chat-frame"
+        src="https://ns.fiber-gate.ru"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-top-navigation allow-pointer-lock"
+        allow="camera; microphone; autoplay; display-capture; clipboard-read; clipboard-write; fullscreen; picture-in-picture"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
 
     <script type="module" src="renderer.js"></script>
-</body>
+  </body>
 </html>

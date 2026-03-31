@@ -1,12 +1,12 @@
 [package]
-name = "night-watch-updater"
+name = "NSQCuT"
 version = "1.0.0"
-description = "Addon manager for World of Warcraft"
+description = "NSQCuT - Аддон менеджер для World of Warcraft 3.3.5"
 authors = ["gse orca"]
 edition = "2021"
 
 [lib]
-name = "night_watch_updater_lib"
+name = "nsqcut_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
@@ -21,5 +21,5 @@ serde_json = { version = "1.0.149", features = ["preserve_order"] }
 tauri = { version = "2", features = [] }
 tauri-plugin-dialog = "2.6.0"
 tauri-plugin-shell = "2"
-tokio = { version = "1.50.0", features = ["full"] }
+tokio = { version = "1.50.0", features = ["full", "time"] }
 zip = { version = "8.4.0", features = ["deflate"] }
