@@ -1,9 +1,9 @@
 {
-  "$schema": "../gen/schemas/windows-schema.json",
+  "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "release",
-  "description": "Capabilities for Windows build",
+  "description": "Capabilities for the main window in production mode",
   "windows": ["main"],
-  "platforms": ["windows"],
+  "platforms": ["macOS", "windows", "linux"],
   "permissions": [
     "core:default",
     "core:window:allow-start-dragging",
@@ -11,6 +11,7 @@
     "core:path:allow-dirname",
     "core:path:allow-resolve",
     "dialog:allow-open",
-    "dialog:allow-message"
+    "dialog:allow-message",
+    "shell:allow-open"
   ]
 }
