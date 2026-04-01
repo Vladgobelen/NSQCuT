@@ -10,11 +10,16 @@ let isInstalling = false;
 
 // ✅ Глобальное состояние Щебетало
 let isVoiceChatActive = false;
+
+// ✅ Состояние микрофона
+let isMicMuted = false;
+
 const VOICE_CHAT_URL = "https://ns.fiber-gate.ru";
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("[NSQCuT] DOM loaded");
 
+  // ✅ Элементы интерфейса
   const gameStatus = document.getElementById("game-status");
   const launchBtn = document.getElementById("launch-btn");
   const addonsList = document.getElementById("addons-list");
@@ -28,6 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const voiceChatHeader = document.getElementById("voice-chat-header");
   const backToAddonsBtn = document.getElementById("back-to-addons-btn");
   const voiceHoverZone = document.getElementById("voice-hover-zone");
+  const voiceMicBtn = document.getElementById("voice-mic-btn");
 
   // ✅ Подписка на события прогресса
   await listen("progress", (event) => {
@@ -93,6 +99,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     backToAddonsBtn.addEventListener("click", closeVoiceChat);
   }
 
+  // 🔥 Обработчик кнопки микрофона
+  if (voiceMicBtn) {
+    voiceMicBtn.addEventListener("click", toggleMicrophone);
+  }
+
   // 🔥 Логика показа/скрытия хедера: зона 10px сверху + сама панель
   function showHeader() {
     if (voiceChatHeader) {
@@ -128,11 +139,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       console.log("[NSQCuT] Invoking load_addons...");
       const addons = await invoke("load_addons");
-      console.log(
-        "[NSQCuT] Received",
-        Object.keys(addons).length,
-        "addons"
-      );
+      console.log("[NSQCuT] Received", Object.keys(addons).length, "addons");
       renderAddons(addons);
     } catch (error) {
       console.error("[NSQCuT] Error loading addons:", error);
@@ -318,7 +325,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function changeGamePath() {
     try {
       console.log("[NSQCuT] Changing game path...");
-
       if (open && dirname) {
         const selected = await open({
           title: "Выберите Wow.exe",
@@ -330,7 +336,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             },
           ],
         });
-
         console.log("[NSQCuT] Dialog result:", selected);
 
         if (selected && typeof selected === "string") {
@@ -403,6 +408,51 @@ document.addEventListener("DOMContentLoaded", async () => {
     checkGame();
     console.log("[NSQCuT] Щебетало скрыто (сохранено)");
   }
+
+  // 🔥 Функция переключения микрофона
+  function toggleMicrophone() {
+    isMicMuted = !isMicMuted;
+
+    // Обновляем визуальное состояние кнопки
+    if (voiceMicBtn) {
+      voiceMicBtn.classList.toggle("muted", isMicMuted);
+      voiceMicBtn.title = isMicMuted
+        ? "Включить микрофон"
+        : "Выключить микрофон";
+    }
+
+    // 🔥 Отправляем сообщение в iframe через postMessage
+    // Это основной способ связи с кросс-доменным iframe
+    if (voiceChatFrame && voiceChatFrame.contentWindow) {
+      const message = {
+        type: "MICROPHONE_TOGGLE",
+        muted: isMicMuted,
+        timestamp: Date.now(),
+      };
+      console.log("[NSQCuT] Sending to voice chat:", message);
+      voiceChatFrame.contentWindow.postMessage(message, VOICE_CHAT_URL);
+    } else {
+      console.warn("[NSQCuT] Voice chat frame not ready");
+    }
+
+    // Для тестирования - выводим в консоль
+    console.log(`[NSQCuT] Microphone ${isMicMuted ? "MUTED" : "UNMUTED"}`);
+  }
+
+  // 🔥 Слушаем ответы от iframe (если веб-клиент поддерживает обратную связь)
+  window.addEventListener("message", (event) => {
+    // Проверяем источник сообщения
+    if (event.origin !== VOICE_CHAT_URL) {
+      console.warn(
+        "[NSQCuT] Ignoring message from unknown origin:",
+        event.origin
+      );
+      return;
+    }
+    console.log("[NSQCuT] Received from voice chat:", event.data);
+    // Здесь можно обрабатывать ответы от веб-клиента
+    // Например: статус подключения, ошибки и т.д.
+  });
 
   function showError(message) {
     console.error("[NSQCuT] Error:", message);
